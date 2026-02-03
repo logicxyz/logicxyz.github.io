@@ -1,0 +1,33 @@
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background-color: transparent; }
+        ::-webkit-scrollbar-thumb { background-color: rgba(93, 92, 222, 0.5); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background-color: rgba(93, 92, 222, 0.8); }
+        html { scroll-behavior: smooth; }
+        .skill-bar { position: relative; width: 100%; height: 6px; border-radius: 10px; overflow: hidden; }
+        .skill-progress { height: 100%; border-radius: 10px; transition: width 1s ease-in-out; }
+        .project-item { transition: all 0.3s ease; }
+        .project-item.hidden { opacity: 0; transform: scale(0.8); position: absolute; }
+        .testimonial-container { overflow: hidden; position: relative; }
+        .testimonial-slider { display: flex; transition: transform 0.5s ease; }
+        .testimonial-slide { min-width: 100%; }
+        .menu-item { position: relative; display: inline-block; }
+        .menu-item::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -2px; left: 0; background-color: #5D5CDE; transition: width 0.3s ease; }
+        .menu-item:hover::after, .menu-item.active::after { width: 100%; }
+        .hamburger { width: 25px; height: 20px; position: relative; cursor: pointer; }
+        .hamburger span { display: block; position: absolute; height: 2px; width: 100%; background: currentColor; border-radius: 2px; transition: .25s ease-in-out; }
+        .hamburger span:nth-child(1) { top: 0px; }
+        .hamburger span:nth-child(2), .hamburger span:nth-child(3) { top: 9px; }
+        .hamburger span:nth-child(4) { top: 18px; }
+        .hamburger.open span:nth-child(1) { top: 9px; width: 0%; left: 50%; }
+        .hamburger.open span:nth-child(2) { transform: rotate(45deg); }
+        .hamburger.open span:nth-child(3) { transform: rotate(-45deg); }
+        .hamburger.open span:nth-child(4) { top: 9px; width: 0%; left: 50%; }
+        .mobile-menu { transform: translateX(-100%); transition: transform 0.3s ease-in-out; }
+        .mobile-menu.open { transform: translateX(0); }
+        .modal-overlay { position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.7); display: flex; align-items: center; justify-content: center; z-index: 50; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0s 0.3s; }
+        .modal-overlay.active { opacity: 1; visibility: visible; transition: opacity 0.3s ease, visibility 0s; }
+        .modal-content { background-color: white; padding: 20px; border-radius: 10px; max-width: 90%; max-height: 90vh; overflow-y: auto; transform: scale(0.8); transition: transform 0.3s ease; }
+        .modal-overlay.active .modal-content { transform: scale(1); }
+        .dark .modal-content { background-color: #2d2d2d; color: white; }
+        .dark .skill-bar { background-color: rgba(255, 255, 255, 0.1); }
+        .dark .skill-progress { background-color: #5D5CDE; }

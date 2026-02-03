@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abir's Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: { primary: '#5D5CDE', secondary: '#6C63FF', accent: '#FF6584', dark: '#181818', light: '#FFFFFF' },
+                    fontFamily: { sans: ['Poppins', 'sans-serif'], serif: ['Playfair Display', 'serif'] },
+                    animation: { 'fade-in': 'fadeIn 0.5s ease-in-out', 'slide-up': 'slideUp 0.5s ease-in-out' },
+                    keyframes: {
+                        fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+                        slideUp: { '0%': { transform: 'translateY(20px)', opacity: '0' }, '100%': { transform: 'translateY(0)', opacity: '1' } },
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-sans bg-light text-gray-800 dark:bg-dark dark:text-gray-200 transition-colors duration-300">
+    <header class="fixed top-0 left-0 w-full bg-white dark:bg-dark z-40 shadow-sm transition-colors duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-xl sm:text-2xl font-bold text-primary"><span class="font-serif">Abir's </span>Portfolio</a>
+            <nav class="hidden md:flex space-x-6 lg:space-x-8">
+                <a href="#about" class="menu-item text-gray-700 dark:text-gray-300 hover:text-primary transition duration-300">About</a>
+                <a href="#skills" class="menu-item text-gray-700 dark:text-gray-300 hover:text-primary transition duration-300">Skills</a>
+                <a href="#projects" class="menu-item text-gray-700 dark:text-gray-300 hover:text-primary transition duration-300">Projects</a>
+                <a href="#process" class="menu-item text-gray-700 dark:text-gray-300 hover:text-primary transition duration-300">Process</a>
+                <a href="#testimonials" class="menu-item text-gray-700 dark:text-gray-300 hover:text-primary transition duration-300">Testimonials</a>
+                <a href="#contact" class="menu-item text-gray-700 dark:text-gray-300 hover:text-primary transition duration-300">Contact</a>
+            </nav>
+            <div class="flex items-center space-x-3">
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300" aria-label="Toggle dark mode">
+                    <svg id="moon-icon" class="w-5 h-5 text-gray-700 dark:text-gray-300 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    <svg id="sun-icon" class="w-5 h-5 text-gray-700 dark:text-gray-300 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                </button>
+                <div class="hamburger md:hidden" id="mobile-menu-button"><span></span><span></span><span></span><span></span></div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="mobile-menu md:hidden fixed top-[64px] left-0 h-screen w-3/4 max-w-xs bg-white dark:bg-dark z-30 px-4 py-6 shadow-lg">
+            <div class="flex flex-col space-y-4">
+                <a href="#about" class="text-lg text-gray-700 dark:text-gray-300 hover:text-primary">About</a>
+                <a href="#skills" class="text-lg text-gray-700 dark:text-gray-300 hover:text-primary">Skills</a>
+                <a href="#projects" class="text-lg text-gray-700 dark:text-gray-300 hover:text-primary">Projects</a>
+                <a href="#process" class="text-lg text-gray-700 dark:text-gray-300 hover:text-primary">Process</a>
+                <a href="#testimonials" class="text-lg text-gray-700 dark:text-gray-300 hover:text-primary">Testimonials</a>
+                <a href="#contact" class="text-lg text-gray-700 dark:text-gray-300 hover:text-primary">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="relative min-h-[80vh] flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+            <div class="container mx-auto relative z-10">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/2 text-center md:text-left animate-slide-up">
+                        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+                            <span class="font-serif block text-primary">Creative</span> Design Solutions
+                        </h1>
+                        <p class="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-6 max-w-md mx-auto md:mx-0">
+                            Transforming ideas into stunning, user-centric designs.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                            <a href="#projects" class="px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition duration-300">View My Work</a>
+                            <a href="#contact" class="px-6 py-2 border-2 border-primary text-primary dark:text-white rounded-lg hover:bg-primary/10 transition duration-300">Get in Touch</a>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <img src="images/logo-logo.jpg" alt="Hero Image" loading="lazy" class="w-full max-h-[350px] object-cover rounded-lg shadow-xl">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-dark transition-colors duration-300">
+            <div class="container mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">About <span class="text-primary font-serif">Me</span></h2>
+                    <div class="w-16 h-1 bg-primary mx-auto"></div>
+                </div>
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-2/5 mb-8 md:mb-0">
+                        <img src="profile.png" alt="Profile Image" loading="lazy" class="w-full max-w-[300px] h-auto object-cover rounded-lg shadow-lg mx-auto">
+                    </div>
+                    <div class="md:w-3/5">
+                        <h3 class="text-xl md:text-2xl font-semibold text-gray-800 dark:text-white mb-4">Creative Designer</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-6 text-sm md:text-base">
+                            I’m a passionate designer with 2+ years of experience in UI and graphic design.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                            <div class="flex items-center"><i class="fas fa-user text-primary mr-2"></i><div><h4 class="font-semibold text-gray-800 dark:text-white">Name</h4><p class="text-gray-600 dark:text-gray-400">Asaduzzaman Abir</p></div></div>
+                            <div class="flex items-center"><i class="fas fa-envelope text-primary mr-2"></i><div><h4 class="font-semibold text-gray-800 dark:text-white">Email</h4><p class="text-gray-600 dark:text-gray-400"><a href="mailto:nursaidabinte@gmail.com">My Email</a></p></div></div>
+                            <div class="flex items-center"><i class="fas fa-map-marker-alt text-primary mr-2"></i><div><h4 class="font-semibold text-gray-800 dark:text-white">Location</h4><p class="text-gray-600 dark:text-gray-400">Satkania, Chattogram, Bangladesh  </p></div></div>
+                            <div class="flex items-center"><i class="fas fa-graduation-cap text-primary mr-2"></i><div><h4 class="font-semibold text-gray-800 dark:text-white">Certifications.</h4><p class="text-gray-600 dark:text-gray-400">D Graphic Design</p></div></div>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="#" target="_blank" class="w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center hover:bg-primary hover:text-white transition duration-300" aria-label="Behance"><i class="fab fa-behance"></i></a>
+                            <a href="#" target="_blank" class="w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center hover:bg-primary hover:text-white transition duration-300" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+                            <a href="#" target="_blank" class="w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center hover:bg-primary hover:text-white transition duration-300" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" target="_blank" class="w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center hover:bg-primary hover:text-white transition duration-300" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+            <div class="container mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">My <span class="text-primary font-serif">Skills</span></h2>
+                    <div class="w-16 h-1 bg-primary mx-auto"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-4"><i class="fas fa-pencil-ruler text-primary mr-2"></i>Design Skills</h3>
+                        <div class="space-y-4">
+                            <div><div class="flex justify-between text-sm"><span>User Interface Design</span><span class="text-primary">55%</span></div><div class="skill-bar bg-gray-200 dark:bg-gray-700"><div class="skill-progress bg-primary" data-width="55%" style="width: 0;"></div></div></div>
+                            <div><div class="flex justify-between text-sm"><span>Brand Identity Design</span><span class="text-primary">75%</span></div><div class="skill-bar bg-gray-200 dark:bg-gray-700"><div class="skill-progress bg-primary" data-width="75%" style="width: 0;"></div></div></div>
+                            <div><div class="flex justify-between text-sm"><span>Graphic Design</span><span class="text-primary">95%</span></div><div class="skill-bar bg-gray-200 dark:bg-gray-700"><div class="skill-progress bg-primary" data-width="85%" style="width: 0;"></div></div></div>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-4"><i class="fas fa-code text-primary mr-2"></i>Technical Skills</h3>
+                        <div class="space-y-4">
+                            <div><div class="flex justify-between text-sm"><span>HTML/CSS</span><span class="text-primary">50%</span></div><div class="skill-bar bg-gray-200 dark:bg-gray-700"><div class="skill-progress bg-primary" data-width="50%" style="width: 0;"></div></div></div>
+                            <div><div class="flex justify-between text-sm"><span>Photoshop</span><span class="text-primary">75%</span></div><div class="skill-bar bg-gray-200 dark:bg-gray-700"><div class="skill-progress bg-primary" data-width="75%" style="width: 0;"></div></div></div>
+                            <div><div class="flex justify-between text-sm"><span>Figma/Sketch</span><span class="text-primary">55%</span></div><div class="skill-bar bg-gray-200 dark:bg-gray-700"><div class="skill-progress bg-primary" data-width="55%" style="width: 0;"></div></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-dark transition-colors duration-300">
+            <div class="container mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">My <span class="text-primary font-serif">Projects</span></h2>
+                    <div class="w-16 h-1 bg-primary mx-auto"></div>
+                </div>
+                <div class="flex flex-wrap justify-center mb-8 gap-2">
+                    <button class="filter-btn px-4 py-1 text-sm rounded-full text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 hover:bg-primary hover:text-white transition duration-300 active" data-filter="all">All</button>
+                    <button class="filter-btn px-4 py-1 text-sm rounded-full text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 hover:bg-primary hover:text-white transition duration-300" data-filter="ui-design">UI Design</button>
+                    <button class="filter-btn px-4 py-1 text-sm rounded-full text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 hover:bg-primary hover:text-white transition duration-300" data-filter="branding">Branding</button>
+                    <button class="filter-btn px-4 py-1 text-sm rounded-full text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 hover:bg-primary hover:text-white transition duration-300" data-filter="web-design">Web Design</button>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="projects-grid"></div>
+            </div>
+        </section>
+
+        <section id="process" class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+            <div class="container mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">My <span class="text-primary font-serif">Process</span></h2>
+                    <div class="w-16 h-1 bg-primary mx-auto"></div>
+                </div>
+                <div class="space-y-12">
+                    <div class="flex flex-col md:flex-row items-center gap-6">
+                        <div class="md:w-1/2"><img src="images/Discovery.jpg" alt="Discovery" loading="lazy" class="w-full h-[180px] object-cover rounded-lg"></div>
+                        <div class="md:w-1/2 text-center md:text-left"><h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">01. Discovery</h3><p class="text-gray-700 dark:text-gray-300 text-sm">Understanding goals through research.</p></div>
+                    </div>
+                    <div class="flex flex-col md:flex-row-reverse items-center gap-6">
+                        <div class="md:w-1/2"><img src="images/Implementation.jpg" alt="Design & Implementation" loading="lazy" class="w-full h-[180px] object-cover rounded-lg"></div>
+                        <div class="md:w-1/2 text-center md:text-right"><h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">02.Design & Implementation</h3><p class="text-gray-700 dark:text-gray-300 text-sm">Planning aligned with objectives.Smart Design, Strategic Implementation – Aligned for Success.
+</p></div>
+                    </div>
+                    <div class="flex flex-col md:flex-row items-center gap-6">
+                        <div class="md:w-1/2"><img src="images/Testing & Launch.jpg" alt="Testing & Launch" loading="lazy" class="w-full h-[180px] object-cover rounded-lg"></div>
+                        <div class="md:w-1/2 text-center md:text-left"><h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">03. Testing & Launch</h3><p class="text-gray-700 dark:text-gray-300 text-sm">Thorough Testing, Flawless Launch – Ensuring Excellence.Creating designs with feedback.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-dark transition-colors duration-300">
+            <div class="container mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Client <span class="text-primary font-serif">Testimonials</span></h2>
+                    <div class="w-16 h-1 bg-primary mx-auto"></div>
+                </div>
+                <div class="max-w-3xl mx-auto relative">
+                    <div class="flex justify-between absolute top-1/2 left-0 right-0 transform -translate-y-1/2 z-10 pointer-events-none">
+                        <button id="testimonial-prev" class="w-10 h-10 rounded-full bg-white dark:bg-gray-800 text-primary shadow-md flex items-center justify-center pointer-events-auto hover:bg-primary hover:text-white transition duration-300" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+                        <button id="testimonial-next" class="w-10 h-10 rounded-full bg-white dark:bg-gray-800 text-primary shadow-md flex items-center justify-center pointer-events-auto hover:bg-primary hover:text-white transition duration-300" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="testimonial-container">
+                        <div class="testimonial-slider"></div>
+                    </div>
+                    <div class="flex justify-center mt-6" id="testimonial-dots"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+            <div class="container mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Get In <span class="text-primary font-serif">Touch</span></h2>
+                    <div class="w-16 h-1 bg-primary mx-auto"></div>
+                </div>
+                <div class="max-w-2xl mx-auto bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                    <form id="contact-form" class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Name</label>
+                            <input type="text" id="name" name="name" required class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring focus:ring-primary dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
+                            <input type="email" id="email" name="email" required class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring focus:ring-primary dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Message</label>
+                            <textarea id="message" name="message" rows="3" required class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring focus:ring-primary dark:bg-gray-700 dark:border-gray-600 dark:text-white"></textarea>
+                        </div>
+                        <button type="submit" id="submit-btn" class="w-full bg-primary text-white py-2 rounded-md hover:bg-primary/90 transition duration-300">Send</button>
+                    </form>
+                    <div id="toast" class="hidden mt-4 text-center text-green-600 dark:text-green-400">Message sent successfully!</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400 mb-4">© 2025 Abir's Portfolio. All rights reserved.</p>
+            <div class="flex justify-center gap-4">
+                <a href="#about" class="text-gray-400 hover:text-white transition duration-300 text-sm">About</a>
+                <a href="#projects" class="text-gray-400 hover:text-white transition duration-300 text-sm">Projects</a>
+                <a href="#contact" class="text-gray-400 hover:text-white transition duration-300 text-sm">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal-overlay" id="project-modal">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white" id="modal-title"></h3>
+                <button id="close-modal" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200" aria-label="Close"><i class="fas fa-times text-xl"></i></button>
+            </div>
+            <img id="modal-image" class="w-full h-[250px] object-cover rounded-lg mb-4" loading="lazy">
+            <p id="modal-description" class="text-gray-700 dark:text-gray-300 mb-4"></p>
+            <div class="grid grid-cols-2 gap-4 text-sm">
+                <div><span class="font-medium text-gray-600 dark:text-gray-400">Client:</span> <span id="modal-client"></span></div>
+                <div><span class="font-medium text-gray-600 dark:text-gray-400">Date:</span> <span id="modal-date"></span></div>
+                <div><span class="font-medium text-gray-600 dark:text-gray-400">Category:</span> <span id="modal-category"></span></div>
+                <div><span class="font-medium text-gray-600 dark:text-gray-400">Tools:</span> <span id="modal-tools"></span></div>
+            </div>
+            <a href="#" id="modal-link" target="_blank" class="inline-block mt-4 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition duration-300">View Live</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
