@@ -125,6 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             // EmailJS
+            //Replace thid by your own emailjs public key.
             emailjs.init('39IAlu5tOp7o1xL8q');
             document.getElementById('contact-form').addEventListener('submit', e => {
                 e.preventDefault();
@@ -136,6 +137,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     email: document.getElementById('email').value,
                     message: document.getElementById('message').value
                 };
+                        
+               // You Will replace the service and template id by your own emailjs data.
                 emailjs.send('service_v1xgh3f', 'template_0oifln9', formData)
                     .then(() => {
                         document.getElementById('contact-form').reset();
